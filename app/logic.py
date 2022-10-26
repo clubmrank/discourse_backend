@@ -144,3 +144,16 @@ def post_review(data):
         return Response(serialised_review.data, status=status.HTTP_201_CREATED)
 
     return Response(serialised_review.errors, status=status.HTTP_400_BAD_REQUEST)
+
+def add_like(review):
+    review = models.Review.objects.get(pk=review)
+    review.likes += 1
+    review.save()
+    return Response(status=status.HTTP_200_OK)
+
+
+def add_dislike(review):
+    review = models.Review.objects.get(pk=review)
+    review.dislikes += 1
+    review.save()
+    return Response(status=status.HTTP_200_OK)

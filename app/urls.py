@@ -41,4 +41,6 @@ urlpatterns = [
     # Post
     ###########################################################
     path('post_review', views.post_review, name="post_review"),
+    path('add_like/<int:review_id>', views.add_like, name="add_like"),
+    path('add_dislike/<int:review_id>', views.add_dislike, name="add_dislike"),
 ]

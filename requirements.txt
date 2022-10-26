@@ -1,2 +1,4 @@
 django
 djangorestframework
+whitenoise
+psycopg2-binary

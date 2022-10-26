@@ -33,7 +33,7 @@ class User(AbstractBaseUser):
     first_names = models.CharField(max_length=128)
     surname = models.CharField(max_length=64)
     USERNAME_FIELD = 'student_number' # Student number is also username
-    enrollment = models.ForeignKey(Enrollment, null=True, related_name='student_enrollment', on_delete=models.SET_NULL)
+    enrollment = models.ForeignKey(Enrollment, null=True, blank=True, related_name='student_enrollment', on_delete=models.SET_NULL)
     # Password field provided in AbstractBaseUser class
 
     def __str__(self):

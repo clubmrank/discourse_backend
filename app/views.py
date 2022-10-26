@@ -4,11 +4,22 @@ from django.shortcuts import render
 from . import logic, models, forms
 
 # Authentication
+from django.views.decorators.csrf import csrf_exempt
 
 # Django REST API
 from rest_framework.decorators import api_view
 
 # Create your views here.
+
+@api_view(['GET'])
+def add_like(request, review_id):
+    return logic.add_like(review_id)
+
+
+@api_view(['GET'])
+def add_dislike(request, review_id):
+    return logic.add_dislike(review_id)
+
 
 def signup(request):
     if request.method == 'POST':
@@ -147,5 +158,6 @@ def get_all_reviews_by_module(request, module_id):
 
 # Post a review
 @api_view(['POST'])
+@csrf_exempt
 def post_review(request):
     return logic.post_review(request.POST)

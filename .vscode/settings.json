@@ -1,3 +1,5 @@
 {
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "appService.defaultWebAppToDeploy": "/subscriptions/f376e1cd-62a1-4923-9232-17be1f689eb4/AppServices/subscriptions/f376e1cd-62a1-4923-9232-17be1f689eb4/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/discoursemrank",
+    "appService.deploySubpath": "."
 }
