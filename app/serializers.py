@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from . import models
 
+from django.contrib.auth.hashers import make_password
+
 # Model serializers (Allow Django data to be serialized to JSON)
 
 class UserSerializer(serializers.ModelSerializer):
